@@ -91,7 +91,7 @@ body {
 
 .chart-title {
 	margin: 0;
-	font-size: clamp(1rem, 2.5vw, 1rem);
+	font-size: clamp(1.3rem, 2.5vw, 1.3rem);
 	color: var(--clr-neutral-dark-brown);
 }
 
