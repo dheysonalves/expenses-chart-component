@@ -19,7 +19,7 @@
 	--fs-base: clamp(1.125rem, 1vw + 0.1rem, 2rem);
 
 	/* FONT */
-	--ff-dm-sans: 'DM Sans', sans-serif;
+	--ff-dm-sans: "DM Sans", sans-serif;
 	--fw-400: 400;
 	--fw-700: 700;
 }
@@ -28,7 +28,6 @@
 **::before,
 **::after {
 	box-sizing: border-box;
-	font: inherit;
 	padding: 0;
 	border: 0;
 }
@@ -36,7 +35,7 @@
 body {
 	font-size: var(--fs-base);
 	background-color: var(--clr-neutral-cream);
-	font-family: 'DM Sans', sans-serif;
+	font-family: "DM Sans", sans-serif;
 	vertical-align: baseline;
 	overflow: auto;
 	min-height: 100vh;
@@ -44,14 +43,15 @@ body {
 }
 
 .core-main {
-	display: flex;
-	flex-direction: column;
-	align-items: center;
+	display: grid;
+	min-height: 100vh;
+	overflow: auto;
 }
 
 .card {
-	margin: .9em;
-	max-width: 100%;
+	margin: 0em 0.9em;
+	align-self: center;
+	justify-self: center;
 }
 
 .balance-card {
@@ -59,7 +59,7 @@ body {
 	justify-content: space-between;
 	align-items: center;
 	background-color: var(--clr-primary-soft-red);
-	border-radius: .4em;
+	border-radius: 0.4em;
 	padding: 1em;
 }
 
@@ -67,14 +67,14 @@ body {
 	margin: 0;
 	color: var(--clr-very-pale-orange);
 	font-weight: 100;
-	font-size: .9rem;
+	font-size: 0.9rem;
 }
 
 .balance-price {
 	color: var(--clr-very-pale-orange);
 	font-size: 1.5rem;
 	font-weight: 700;
-	padding-top: .5em;
+	padding-top: 0.5em;
 }
 
 .balance-img-logo {
@@ -85,13 +85,104 @@ body {
 .spending-chart {
 	background-color: var(--clr-very-pale-orange);
 	padding: 1em;
-	margin-top: .9em;
-	border-radius: .4em;
+	margin-top: 0.9em;
+	border-radius: 0.4em;
 }
 
 .chart-title {
 	margin: 0;
-	/* font-size: 1.2rem; */
+	font-size: clamp(1rem, 2.5vw, 1rem);
+	color: var(--clr-neutral-dark-brown);
+}
+
+.unordered-chart {
+	display: flex;
+	list-style: none;
+	margin: 1em 0;
+	padding: 1em 0;
+	border-bottom: 1px solid var(--clr-neutral-cream);
+}
+
+.unordered-chart li {
+	display: flex;
+	flex-direction: column;
+	align-self: flex-end;
+	align-items: center;
+	margin-right: 0.5em;
+}
+
+.unordered-chart li > div.chart {
+	display: inline-block;
+	max-height: 6em;
+	min-height: 0em;
+	height: 6em;
+	min-width: 2em;
+	max-width: 2em;
+	border-radius: 0.2em;
+	background-color: var(--clr-primary-soft-red);
+	cursor: pointer;
+}
+
+.unordered-chart li > div.chart:hover {
+	opacity: 0.5;
+}
+
+.unordered-chart li > div.chart:active {
+	opacity: 0.5;
+	background-color: var(--clr-primary-cyan);
+}
+
+.chart-price {
+	background-color: var(--clr-neutral-dark-brown);
+	padding: 0.4em;
+	color: white;
+	font-size: 0.8rem;
+	text-align: center;
+	border-radius: 0.3em;
+	margin-bottom: 0.4em;
+}
+
+.chart-month {
+	color: var(--clr-neutral-medium-brown);
+	text-transform: lowercase;
+	font-size: 0.8rem;
+	margin-top: 0.5em;
+}
+
+.chart-footer {
+	display: flex;
+	flex-direction: column;
+}
+
+.chart-footer-total {
+	margin: 0.1em 0;
+	color: var(--clr-neutral-medium-brown);
+	font-size: 0.8rem;
+}
+
+.chart-footer-percentage {
+	display: flex;
+	justify-content: space-between;
+	align-items: flex-end;
+}
+
+.chart-total-value {
+	font-weight: var(--fw-700);
+	color: var(--clr-neutral-dark-brown);
+	font-size: 2rem;
+}
+
+.percentage {
+	margin: 0;
+	color: var(--clr-neutral-dark-brown);
+	font-weight: var(--fw-700);
+	font-size: 0.9rem;
+	text-align: right;
+}
+
+.last-month {
+	color: var(--clr-neutral-medium-brown);
+	font-size: 0.8rem;
 }
 
 .attribution {
