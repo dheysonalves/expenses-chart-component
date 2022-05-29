@@ -108,14 +108,13 @@ body {
 	flex-direction: column;
 	align-self: flex-end;
 	align-items: center;
-	margin-right: 0.5em;
+	margin-right: 0.3em;
 }
 
 .unordered-chart li > div.chart {
 	display: inline-block;
 	max-height: 6em;
 	min-height: 0em;
-	height: 6em;
 	min-width: 2em;
 	max-width: 2em;
 	border-radius: 0.2em;
@@ -129,6 +128,10 @@ body {
 
 .unordered-chart li > div.chart:active {
 	opacity: 0.5;
+	background-color: var(--clr-primary-cyan);
+}
+
+.unordered-chart li > div.chart.primary-cyan {
 	background-color: var(--clr-primary-cyan);
 }
 
@@ -183,6 +186,10 @@ body {
 .last-month {
 	color: var(--clr-neutral-medium-brown);
 	font-size: 0.8rem;
+}
+
+.d-none {
+	display: none;
 }
 
 .attribution {
